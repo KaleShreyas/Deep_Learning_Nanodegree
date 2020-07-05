@@ -31,21 +31,21 @@ Step 6: Test Your Algorithm
 2. Check if a dog is present in the image using VGG16 pretrained model  and as another try using Inception-V3 model.
 3. VGG16 falls short of 100% accuracy which can be attributed to the fact that VGG16 gives out only 118 out of 133 dog breed categories.
 4. Creating CNN from scratch: 
-    I began by trying previously used CNN architectures in this course like CIFAR 10 and the VGG16, which later was my base model as an inspiration
-    Input is 224 x 224 x 3 and Output is 133 classes
-    After several changes and iterations and learnings from various standard methodologies available, I stayed with the model defined above.
-    Convolutional steps were pretty simple and standard where I went with the multiple of computer memory 16,32,64 ending at 128 as I thought this is closest to 133 i.e. no of our classes.
-    With consecutive Max pooling Layers, I'm drying to downsample the size by a factor of 2 while increasing the depth by the same factor, input shape at each convolutional layer is defined in comments
-    I went wrong with the input shape for flattening image and had error in the first try; solved this using x.view before image flattening. Working on the math behind this output greatly enhanced my knowledge of CNN's and how the layer's work.
-    To avoid overfitting, I introduced drop out layer with 25% probability after each fully connected linear layer with ReLU activation.
-    Resized images to 256 and then to 224 by cropping at the center. Input tensor size is 224 because VGG-16 Takes 224x224 images as input, so we resize all of them
-    Augmentation was done to make sure dog face is identifiable in mirror image i.e horizontal flip and image was also rotated randomly by 45 degrees first but after many iterations settled on 15 degress, all this done randomly.
-    Also, to match the normalization used when the models were trained; each color channel was normalized separately, where the means are [0.485, 0.456, 0.406] and the standard deviations are [0.229, 0.224, 0.225]
+- I began by trying previously used CNN architectures in this course like CIFAR 10 and the VGG16, which later was my base model as an inspiration
+- Input is 224 x 224 x 3 and Output is 133 classes
+- After several changes and iterations and learnings from various standard methodologies available, I stayed with the model defined above.
+- Convolutional steps were pretty simple and standard where I went with the multiple of computer memory 16,32,64 ending at 128 as I thought this is closest to 133 i.e. no of our classes.
+- With consecutive Max pooling Layers, I'm drying to downsample the size by a factor of 2 while increasing the depth by the same factor, input shape at each convolutional layer is defined in comments
+- I went wrong with the input shape for flattening image and had error in the first try; solved this using x.view before image flattening. Working on the math behind this output greatly enhanced my knowledge of CNN's and how the layer's work.
+- To avoid overfitting, I introduced drop out layer with 25% probability after each fully connected linear layer with ReLU activation.
+- Resized images to 256 and then to 224 by cropping at the center. Input tensor size is 224 because VGG-16 Takes 224x224 images as input, so we resize all of them
+- Augmentation was done to make sure dog face is identifiable in mirror image i.e horizontal flip and image was also rotated randomly by 45 degrees first but after many iterations settled on 15 degress, all this done randomly.
+- Also, to match the normalization used when the models were trained; each color channel was normalized separately, where the means are [0.485, 0.456, 0.406] and the standard deviations are [0.229, 0.224, 0.225]
 5. Custom CNN gave an abmyssal 16% accuracy, next up is to use transfer learning on pretrained RestNet50 model.
 6. ResNet50 logic:
-    I shifted to ResNet50 which has less error rate than VGG16 and is also one of the recommended models.
-    I avoided changing anything in the features and just made change in the last classification layer as it is a good model on the ImageNet and has hence already seen similar data, so no need to train the whole model for features again.
-    I obtained 71% accuracy with SGD optimizer and 25 epochs. Wanting to reduce the iterations for reaching low error rates, I tried used Adam optimizer and obtained 85% accuracy with 20 epochs.
+- I shifted to ResNet50 which has less error rate than VGG16 and is also one of the recommended models.
+- I avoided changing anything in the features and just made change in the last classification layer as it is a good model on the ImageNet and has hence already seen similar data, so no need to train the whole model for features again.
+- I obtained 71% accuracy with SGD optimizer and 25 epochs. Wanting to reduce the iterations for reaching low error rates, I tried used Adam optimizer and obtained 85% accuracy with 20 epochs.
     
     
 ## General Obsrvations
