@@ -6,3 +6,6 @@ In this project, you'll get to build a neural network from scratch to carry out 
 
 # Dog-Breed Classifier
 In this project, you will learn how to build a pipeline to process real-world, user-supplied images. Given an image of a dog, your algorithm will identify an estimate of the canine’s breed. If supplied an image of a human face, the code will identify the resembling dog breed.
+
+# TV Script Generation
+In this project, you'll generate your own Seinfeld TV scripts using RNNs. You'll be using a Seinfeld dataset of scripts from 9 seasons. The Neural Network you'll build will generate a new, "fake" TV script.
