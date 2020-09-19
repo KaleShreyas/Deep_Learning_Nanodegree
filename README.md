@@ -15,3 +15,6 @@ Dataset is already included in the repository.
 # Face genration using GAN's
 In this project, we'll use generative adversarial networks to generate new images of faces. Dataset can be obtained from : http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html
 The dataset is more complex than the number datasets (like MNIST or SVHN) so GPU usage is advised.
+
+# Deploying a Sentiment Analysis Model
+In this project you will construct a recurrent neural network for the purpose of determining the sentiment of a movie review using the IMDB data set. You will create this model using Amazon's SageMaker service. In addition, you will deploy your model and construct a simple web app which will interact with the deployed model.
