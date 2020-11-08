@@ -12,7 +12,7 @@ Dataset is already included in the repository.
 In this project, we'll generate your own Seinfeld TV scripts using RNNs. You'll be using a Seinfeld dataset of scripts from 9 seasons. The Neural Network you'll build will generate a new, "fake" TV script.
 Dataset is already included in the repository.
 
-# Face genration using GAN's
+# Face generation using GAN's
 In this project, we'll use generative adversarial networks to generate new images of faces. Dataset can be obtained from : http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html
 The dataset is more complex than the number datasets (like MNIST or SVHN) so GPU usage is advised.
 
